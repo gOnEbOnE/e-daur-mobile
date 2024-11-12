@@ -52,14 +52,14 @@ class LeftDrawer extends StatelessWidget {
     },
   ),
   ListTile(
-    leading: const Icon(Icons.mood),
-    title: const Text('Tambah Mood'),
-    // Bagian redirection ke MoodEntryFormPage
+    leading: const Icon(Icons.add_box_outlined),
+    title: const Text('Tambah Product'),
+    // Bagian redirection ke ProductEntryFormPage
     onTap: () {
       Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const MoodEntryFormPage(),
+            builder: (context) => const ProductEntryFormPage(),
           ));
     },
   ),        ],

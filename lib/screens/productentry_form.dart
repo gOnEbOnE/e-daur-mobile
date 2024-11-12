@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MoodEntryFormPage extends StatefulWidget {
-  const MoodEntryFormPage({super.key});
+class ProductEntryFormPage extends StatefulWidget {
+  const ProductEntryFormPage({super.key});
 
   @override
-  State<MoodEntryFormPage> createState() => _MoodEntryFormPageState();
+  State<ProductEntryFormPage> createState() => _ProductEntryFormPageState();
 }
 
-class _MoodEntryFormPageState extends State<MoodEntryFormPage> {
+class _ProductEntryFormPageState extends State<ProductEntryFormPage> {
   final _formKey = GlobalKey<FormState>();
   String _product = "";
   String _description = "";
@@ -19,7 +19,7 @@ class _MoodEntryFormPageState extends State<MoodEntryFormPage> {
       appBar: AppBar(
         title: const Center(
           child: Text(
-            'Form Tambah Mood Kamu Hari ini',
+            'Form Tambah Produk',
           ),
         ),
         backgroundColor: Theme.of(context).colorScheme.primary,
@@ -94,10 +94,10 @@ class _MoodEntryFormPageState extends State<MoodEntryFormPage> {
                   },
                   validator: (String? value) {
                     if (value == null || value.isEmpty) {
-                      return "Mood intensity tidak boleh kosong!";
+                      return "Rating tidak boleh kosong!";
                     }
                     if (int.tryParse(value) == null) {
-                      return "Mood intensity harus berupa angka!";
+                      return "Rating harus berupa angka!";
                     }
                     return null;
                   },
@@ -118,7 +118,7 @@ class _MoodEntryFormPageState extends State<MoodEntryFormPage> {
                           context: context,
                           builder: (context) {
                             return AlertDialog(
-                              title: const Text('Mood berhasil tersimpan'),
+                              title: const Text('Produk berhasil tersimpan'),
                               content: SingleChildScrollView(
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,

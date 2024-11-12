@@ -1,4 +1,5 @@
 # e_daur_mobiie
+## TUGAS 7
 
 ## Jelaskan apa yang dimaksud dengan stateless widget dan stateful widget, dan jelaskan perbedaan dari keduanya.
 
@@ -145,3 +146,145 @@ child: InkWell(
 
 6. **`SnackBar(content: Text("Kamu telah menekan tombol ${item.name}!"))`**:
    - Di sini, Anda membuat instance baru dari `SnackBar` dan mengatur kontennya. Pesan yang ditampilkan adalah "Kamu telah menekan tombol ${item.name}!", di mana `${item.name}` akan digantikan dengan nama item yang sesuai (misalnya, "Lihat Daftar Produk", "Tambah Produk", atau "Logout"). Ini memberikan umpan balik langsung kepada pengguna tentang tombol mana yang mereka tekan.
+
+
+## TUGAS 8
+
+### Definisi dan Kegunaan const di Flutter
+
+`const` di Flutter digunakan untuk mendeklarasikan variabel yang nilainya tidak berubah. Dengan menggunakan `const`, Anda dapat menentukan bahwa nilai variabel tidak akan berubah setelah deklarasi. Hal ini membantu dalam meningkatkan kinerja aplikasi karena Flutter dapat mengoptimalkan widget yang tidak berubah.
+
+#### Kapan Sebaiknya Menggunakan const
+
+Menggunakan `const` di Flutter sebaiknya dilakukan dalam situasi-situasi berikut:
+
+* Ketika nilai variabel tidak berubah dan dapat ditentukan pada saat kompilasi.
+* Ketika Anda ingin mengoptimalkan kinerja aplikasi dengan mengurangi penggunaan memori dan mengurangi kemungkinan error.
+* Ketika Anda ingin meningkatkan stabilitas aplikasi dengan mengurangi kemungkinan perubahan nilai yang tidak diinginkan.
+
+#### Kekurangan dan Kapan Sebaiknya Tidak Menggunakan const
+
+Namun, menggunakan `const` juga memiliki beberapa kekurangan dan situasi di mana sebaiknya tidak digunakan, seperti:
+
+* Tidak dapat digunakan untuk variabel yang nilainya berubah.
+* Tidak dapat digunakan untuk variabel yang bergantung pada nilai lain yang berubah.
+* Tidak dapat digunakan untuk variabel yang nilainya ditentukan pada saat runtime.
+* Sebaiknya tidak digunakan untuk variabel yang nilainya dapat berubah berdasarkan kondisi tertentu.
+
+Dengan demikian, menggunakan `const` di Flutter dapat membantu meningkatkan kinerja dan stabilitas aplikasi, namun harus digunakan dengan hati-hati dan hanya untuk variabel yang nilainya tidak berubah.
+
+### Jelaskan dan bandingkan penggunaan Column dan Row pada Flutter. Berikan contoh implementasi dari masing-masing layout widget ini!
+
+Column dan Row adalah dua jenis layout widget yang paling umum digunakan dalam Flutter untuk mengatur tata letak widget lainnya. Keduanya digunakan untuk mengatur widget dalam suatu baris atau kolom, tetapi dengan tujuan yang berbeda.
+
+**Column**
+
+Column digunakan untuk mengatur widget dalam suatu kolom vertikal. Widget ini sangat berguna ketika Anda ingin mengatur beberapa widget dalam suatu urutan vertikal, seperti mengatur tombol, teks, atau gambar dalam suatu kolom.
+
+Contoh implementasi Column:
+```dart
+Column(
+  children: [
+    Text('Widget 1'),
+    Text('Widget 2'),
+    Text('Widget 3'),
+  ],
+)
+```
+Dalam contoh di atas, tiga widget Text akan ditampilkan dalam suatu kolom vertikal.
+
+**Row**
+
+Row digunakan untuk mengatur widget dalam suatu baris horizontal. Widget ini sangat berguna ketika Anda ingin mengatur beberapa widget dalam suatu urutan horizontal, seperti mengatur tombol, teks, atau gambar dalam suatu baris.
+
+Contoh implementasi Row:
+```dart
+Row(
+  children: [
+    Text('Widget 1'),
+    Text('Widget 2'),
+    Text('Widget 3'),
+  ],
+)
+```
+Dalam contoh di atas, tiga widget Text akan ditampilkan dalam suatu baris horizontal.
+
+**Perbandingan**
+
+Berikut adalah perbandingan antara Column dan Row:
+
+|  | Column | Row |
+| --- | --- | --- |
+| Arah | Vertikal | Horizontal |
+| Penggunaan | Mengatur widget dalam suatu kolom | Mengatur widget dalam suatu baris |
+| Contoh Penggunaan | Mengatur tombol, teks, atau gambar dalam suatu kolom | Mengatur tombol, teks, atau gambar dalam suatu baris |
+
+Dalam Flutter, Anda dapat menggunakan Column dan Row untuk mengatur tata letak widget lainnya dengan lebih efektif dan efisien.
+
+###  Sebutkan apa saja elemen input yang kamu gunakan pada halaman form yang kamu buat pada tugas kali ini. Apakah terdapat elemen input Flutter lain yang tidak kamu gunakan pada tugas ini? Jelaskan!
+
+#### Elemen Input yang Digunakan pada Halaman Form
+
+Pada halaman form yang saya buat, terdapat tiga elemen input yang digunakan, yaitu:
+
+1. **TextFormField untuk Product**: 
+   - Digunakan untuk memasukkan nama produk. Memiliki validasi untuk memastikan bahwa input tidak kosong.
+
+2. **TextFormField untuk Description**: 
+   - Digunakan untuk memasukkan deskripsi produk. Juga memiliki validasi untuk memastikan bahwa input tidak kosong.
+
+3. **TextFormField untuk Rating**: 
+   - Digunakan untuk memasukkan rating produk. Memiliki validasi untuk memastikan bahwa input tidak kosong dan harus berupa angka.
+
+#### Elemen Input Flutter Lain yang Tidak Digunakan
+
+Beberapa elemen input Flutter lain yang tidak digunakan pada tugas ini antara lain:
+
+- **Checkbox**: Digunakan untuk memilih satu atau beberapa opsi dari beberapa pilihan.
+- **Radio**: Digunakan untuk memilih satu opsi dari beberapa pilihan yang tersedia.
+- **Switch**: Digunakan untuk mengubah status antara dua keadaan (on/off).
+- **DropdownButton**: Digunakan untuk memilih satu opsi dari daftar dropdown.
+- **DatePicker**: Digunakan untuk memilih tanggal dari kalender.
+
+Masing-masing elemen input ini memiliki kegunaan yang berbeda dan dapat digunakan sesuai dengan kebutuhan aplikasi.
+
+### Bagaimana cara kamu mengatur tema (theme) dalam aplikasi Flutter agar aplikasi yang dibuat konsisten? Apakah kamu mengimplementasikan tema pada aplikasi yang kamu buat?
+
+```dart
+theme: ThemeData(
+         colorScheme: ColorScheme.fromSwatch(
+              primarySwatch: Colors.red,
+        ).copyWith(secondary: const Color.fromARGB(0, 222, 49, 99)),
+        useMaterial3: true,
+```
+
+Untuk mengatur tema dalam aplikasi Flutter agar konsisten, kita dapat menggunakan `ThemeData` yang disediakan oleh Flutter. Dalam contoh di atas, kita dapat melihat bagaimana tema diatur menggunakan `colorScheme` untuk menentukan warna utama dan sekunder aplikasi. Dengan menggunakan `ThemeData`, kita dapat mengatur berbagai aspek tampilan aplikasi, seperti warna, font, dan lain-lain, untuk mencapai konsistensi tampilan.
+
+Pada aplikasi yang saya buat, tema telah diimplementasikan menggunakan `ThemeData` untuk menentukan warna utama dan sekunder aplikasi. Dengan demikian, aplikasi akan memiliki tampilan yang konsisten dan sesuai dengan tema yang diinginkan.
+
+### Bagaimana cara kamu menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter?
+
+Untuk menangani navigasi dalam aplikasi dengan banyak halaman pada Flutter, saya menggunakan `Navigator` dan `MaterialPageRoute`. Berikut adalah langkah-langkah yang saya lakukan:
+
+1. **Menggunakan Navigator**:
+   - Saya memanfaatkan `Navigator.push()` untuk berpindah dari satu halaman ke halaman lain. Metode ini menambahkan halaman baru ke tumpukan navigasi.
+
+2. **Membuat MaterialPageRoute**:
+   - Saya membuat instance dari `MaterialPageRoute` yang menerima builder untuk halaman yang ingin dituju. Ini memungkinkan saya untuk menentukan halaman baru yang akan ditampilkan.
+
+3. **Contoh Implementasi**:
+   - Dalam kode `ItemCard`, ketika pengguna menekan tombol "Tambah Produk", saya menggunakan `Navigator.push()` untuk membuka halaman `ProductEntryFormPage`.
+
+```dart
+if (item.name == "Tambah Produk") {
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => const ProductEntryFormPage()),
+  );
+}
+```
+
+4. **Navigasi Kembali**:
+   - Untuk kembali ke halaman sebelumnya, saya dapat menggunakan `Navigator.pop(context)`, yang akan menghapus halaman teratas dari tumpukan navigasi.
+
+Dengan cara ini, saya dapat dengan mudah mengelola navigasi antar halaman dalam aplikasi Flutter, memberikan pengalaman pengguna yang mulus dan intuitif.

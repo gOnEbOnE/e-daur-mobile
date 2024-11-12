@@ -7,7 +7,7 @@ class MyHomePage extends StatelessWidget {
     final String name = 'Christopher Matthew Hendarson'; // Nama
     final String className = 'PBP C'; // Kelas
     final List<ItemHomepage> items = [
-        ItemHomepage("Lihat Daftar Produk", Icons.mood, Colors.red.shade200),
+        ItemHomepage("Lihat Daftar Produk", Icons.shopping_bag, Colors.red.shade200),
         ItemHomepage("Tambah Produk", Icons.add, Colors.red.shade300 ),
         ItemHomepage("Logout", Icons.logout, Colors.red),
     ];
