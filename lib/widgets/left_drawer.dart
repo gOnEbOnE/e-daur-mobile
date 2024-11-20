@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mental_health_tracker_mobile/screens/menu.dart';
 import 'package:mental_health_tracker_mobile/screens/productentry_form.dart';
+import 'package:mental_health_tracker_mobile/screens/list_productentry.dart';
 
 class LeftDrawer extends StatelessWidget {
   const LeftDrawer({super.key});
@@ -50,6 +51,17 @@ class LeftDrawer extends StatelessWidget {
             builder: (context) => MyHomePage(),
           ));
     },
+  ),
+  ListTile(
+      leading: const Icon(Icons.add_reaction_rounded),
+      title: const Text('Daftar Product'),
+      onTap: () {
+          // Route menu ke halaman mood
+          Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const ProductEntryPage()),
+          );
+      },
   ),
   ListTile(
     leading: const Icon(Icons.add_box_outlined),
